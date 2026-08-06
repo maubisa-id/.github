@@ -115,9 +115,9 @@ produk di sekelilingnya.
 
 ## Open source
 
-Salah satu bagian tersulit saat membangun produk, yaitu pusat akun dan checkout pembayaran, kami
-rilis sebagai template open-source, langsung dari kode yang kami pakai di produksi. Tujuannya
-menghemat waktu tim lain yang menghadapi masalah yang sama.
+Beberapa bagian tersulit saat membangun produk kami rilis sebagai template open-source, langsung
+dari kode yang kami pakai di produksi. Tujuannya menghemat waktu tim lain yang menghadapi masalah
+yang sama.
 
 <table>
 <tr><td>
@@ -148,6 +148,37 @@ npm run dev             # http://localhost:3000
 ```
 
 </td></tr>
+<tr><td>
+
+### [thesisdesk](https://github.com/maubisa-id/thesisdesk)
+
+Sistem manajemen bimbingan skripsi berbasis **Next.js** dan **Prisma**, kode yang sama yang kami
+pakai di produksi untuk [thesis.maubisa.id](https://thesis.maubisa.id). Dashboard per peran, progres
+bab (Kanban), jadwal sesi dengan Google Meet otomatis, dokumen berversi dengan anotasi, chat, dan
+modul akademik kampus opsional (SSO OIDC, integrasi SIAKAD, sidang akhir, multi-tenant). Siap
+produksi, lisensi AGPL-3.0.
+
+<p>
+  <a href="https://github.com/maubisa-id/thesisdesk/generate"><img alt="Gunakan template ini" src="https://img.shields.io/badge/gunakan%20template%20ini-2ea44f?logo=github&logoColor=white"></a>
+  <a href="https://thesis.maubisa.id"><img alt="Demo langsung" src="https://img.shields.io/badge/demo%20langsung-0a48b7?logo=vercel&logoColor=white"></a>
+  <a href="https://github.com/maubisa-id/thesisdesk/blob/main/LICENSE"><img alt="Lisensi" src="https://img.shields.io/github/license/maubisa-id/thesisdesk?color=3FB950&label=lisensi"></a>
+  <a href="https://github.com/maubisa-id/thesisdesk/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/maubisa-id/thesisdesk?style=flat&color=3FB950"></a>
+  <a href="https://github.com/maubisa-id/thesisdesk/releases/latest"><img alt="Rilis" src="https://img.shields.io/github/v/release/maubisa-id/thesisdesk?color=3FB950&label=rilis"></a>
+</p>
+
+Cocok kalau Anda butuh sistem bimbingan skripsi/tesis untuk kampus, program studi, atau tim
+bimbingan mandiri, siap jalan tanpa branding kami. Coba dalam satu menit:
+
+```bash
+npx degit maubisa-id/thesisdesk thesis-saya
+cd thesis-saya
+npm install
+cp .env.example .env    # minimal isi BETTER_AUTH_SECRET
+npm run db:setup && npm run seed
+npm run dev             # http://localhost:3100
+```
+
+</td></tr>
 </table>
 
 ## Yang kami pakai
@@ -165,13 +196,14 @@ npm run dev             # http://localhost:3000
 
 ## Repositori
 
-Ekosistem kami terbagi antara satu template terbuka dan beberapa aplikasi produk internal.
+Ekosistem kami terbagi antara dua template terbuka dan beberapa aplikasi produk internal.
 
 ```
 maubisa-id/
-├─ account-center-starter   publik, MIT   pusat akun + checkout Midtrans Core API
-├─ .github                  publik         profil organisasi (halaman ini)
-└─ (aplikasi produk)        privat         web utama, pusat akun, dan produk lain
+├─ account-center-starter   publik, MIT       pusat akun + checkout Midtrans Core API
+├─ thesisdesk               publik, AGPL-3.0  bimbingan skripsi (dipakai di thesis.maubisa.id)
+├─ .github                  publik            profil organisasi (halaman ini)
+└─ (aplikasi produk)        privat            web utama, pusat akun, dan produk lain
 ```
 
 Kode produk internal bersifat privat karena memuat detail bisnis, katalog, dan konfigurasi. Bagian
@@ -194,12 +226,14 @@ Prinsip ini memandu cara kami membangun dan meninjau kode:
 
 ## Ikut berkontribusi
 
-Kami menyambut isu, ide, dan pull request untuk proyek open-source kami.
+Kami menyambut isu, ide, dan pull request untuk proyek open-source kami
+([account-center-starter](https://github.com/maubisa-id/account-center-starter) dan
+[thesisdesk](https://github.com/maubisa-id/thesisdesk)).
 
-1. **Mulai dari repo yang terbuka.** Baca panduan di
-   [CONTRIBUTING.md](https://github.com/maubisa-id/account-center-starter/blob/main/CONTRIBUTING.md).
-2. **Laporkan bug atau minta fitur.** Pakai
-   [template issue](https://github.com/maubisa-id/account-center-starter/issues/new/choose) yang ada.
+1. **Mulai dari repo yang terbuka.** Tiap repo punya `CONTRIBUTING.md` sendiri dengan panduan setup
+   dan gate sebelum PR ([account-center-starter](https://github.com/maubisa-id/account-center-starter/blob/main/CONTRIBUTING.md),
+   [thesisdesk](https://github.com/maubisa-id/thesisdesk/blob/main/CONTRIBUTING.md)).
+2. **Laporkan bug atau minta fitur.** Pakai template issue yang ada di repo terkait.
 3. **Kirim perubahan.** Fork, buat branch, lalu buka pull request kecil yang fokus. Sertakan langkah
    uji bila relevan.
 
@@ -209,10 +243,10 @@ Pemula dipersilakan. Kalau ragu mulai dari mana, buka issue dan tanyakan lebih d
 
 | Kebutuhan | Ke mana |
 |-----------|---------|
-| Pertanyaan atau bug proyek open-source | [Buka issue](https://github.com/maubisa-id/account-center-starter/issues) |
+| Pertanyaan atau bug proyek open-source | Issue di [account-center-starter](https://github.com/maubisa-id/account-center-starter/issues) atau [thesisdesk](https://github.com/maubisa-id/thesisdesk/issues) |
 | Bantuan sebagai pengguna produk Maubisa | [maubisa.id](https://maubisa.id) atau halo@maubisa.id |
-| Melaporkan celah keamanan (jangan publik) | [Kebijakan keamanan](https://github.com/maubisa-id/account-center-starter/blob/main/SECURITY.md) |
-| Aturan berinteraksi | [Kode Etik](https://github.com/maubisa-id/account-center-starter/blob/main/CODE_OF_CONDUCT.md) |
+| Melaporkan celah keamanan (jangan publik) | Kebijakan keamanan repo terkait ([account-center-starter](https://github.com/maubisa-id/account-center-starter/blob/main/SECURITY.md), [thesisdesk](https://github.com/maubisa-id/thesisdesk/blob/main/SECURITY.md)) |
+| Aturan berinteraksi | Kode Etik repo terkait ([account-center-starter](https://github.com/maubisa-id/account-center-starter/blob/main/CODE_OF_CONDUCT.md), [thesisdesk](https://github.com/maubisa-id/thesisdesk/blob/main/CODE_OF_CONDUCT.md)) |
 
 > [!IMPORTANT]
 > Menemukan celah keamanan pada layanan atau kode kami? Mohon **jangan** membuka issue publik.

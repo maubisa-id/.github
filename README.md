@@ -14,8 +14,8 @@ Repositori khusus untuk **berkas tingkat organisasi** Maubisa (`maubisa-id`).
   - [SUPPORT.md](./SUPPORT.md)
 
 Repositori dengan berkas sendiri (misalnya
-[account-center-starter](https://github.com/maubisa-id/account-center-starter)) memakai versinya
-sendiri, bukan default ini.
+[account-center-starter](https://github.com/maubisa-id/account-center-starter) dan
+[thesisdesk](https://github.com/maubisa-id/thesisdesk)) memakai versinya sendiri, bukan default ini.
 
 ## Tentang Maubisa
 
